@@ -1,7 +1,31 @@
 import React from "react";
-import "./HomePage.css"
+import { onSnapshot } from "firebase/firestore";
+import { signUpClicked } from "./firebase";
+import { addDoc } from "firebase/firestore";
 
 export default function HomeBody() {
+    const[buttonCount, setButtonCount] = React.useState([])
+
+
+    React.useEffect(() => {
+            const unsubscribe = onSnapshot(signUpClicked, function(snapshot) {
+            const count = snapshot.docs.map(doc => ({
+                ...doc.data(),
+                id: doc.id
+            }))
+            setButtonCount(count.length)
+        })
+        return unsubscribe;
+    },  [])
+
+    async function addClick() {
+        const newClick = {
+            time: Date()
+        }
+        await addDoc(signUpClicked, newClick)
+    }
+
+
     return (
         <div className="homeBody">
            
@@ -10,7 +34,7 @@ export default function HomeBody() {
             </div>
 
             <div className="homeBody--right">
-                <button className="signUpButton">Try for free!</button>
+                <button className="signUpButton" onClick={addClick}>Start for free!</button>
             </div>
 
         </div>
