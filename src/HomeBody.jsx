@@ -13,6 +13,7 @@ export default function HomeBody() {
                 ...doc.data(),
                 id: doc.id
             }))
+            console.log(count)
             setButtonCount(count.length)
         })
         return unsubscribe;
@@ -30,7 +31,7 @@ export default function HomeBody() {
         <div className="homeBody">
            
             <div className="homeBody--left">
-                All your legal documents made easy with AI.
+                All your legal documents made easy with AI. {buttonCount}
             </div>
 
             <div className="homeBody--right">
