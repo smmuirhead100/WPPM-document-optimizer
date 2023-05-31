@@ -2,6 +2,8 @@ import React from "react";
 import { onSnapshot } from "firebase/firestore";
 import { signUpClicked } from "./firebase";
 import { addDoc } from "firebase/firestore";
+import example from './assets/exampleDoc.png'
+import Chatbot from "./Chatbot";
 
 export default function HomeBody() {
     const[buttonCount, setButtonCount] = React.useState([])
@@ -28,15 +30,24 @@ export default function HomeBody() {
 
 
     return (
-        <div className="homeBody">
+        <div>
            
-            <div className="homeBody--left">
-                All your legal documents made easy with AI. {buttonCount}
+            <div className="homeBody">
+                <div className="homeBody--left">
+                    All your legal documents made easy with AI.
+                    <button className="signUpButton" onClick={addClick}>Sign up for free!</button> 
+                </div>
+
+                <div className="homeBody--right">
+                    <Chatbot />
+                </div>
             </div>
 
-            <div className="homeBody--right">
-                <button className="signUpButton" onClick={addClick}>Start for free!</button>
+            <img src={example} className="exampleImage"/>
+
+            <div className="homeBody--lower">
             </div>
+            
 
         </div>
     )
