@@ -1,6 +1,6 @@
 .wrapper {
     margin: 1rem;
-    background-color: #27585F;
+    background-color: #15be9c;
     height: 500px;
     width: 300px;
     border-radius: 10px;
@@ -29,27 +29,36 @@
 
 .entry {
     background-color: aliceblue;
-    height: 7%;
+    height: 2rem;
+    width: 12rem;
     margin-left: 2rem;
+    border-style: none;
+    border-radius: 1rem;
+}
+
+.submit {
+    height: 2rem;
+    width: 2rem;
     margin-right: 2rem;
     border-style: none;
     border-radius: 1rem;
-
 }
 
 .openChatWrapper {
+    margin: 1rem;
     display: flex;
     flex-direction: column;
     height: 500px;
     width: 300px;
     border-radius: 1rem;
     justify-content: flex-end;
-    align-items: center;
+    align-items: flex-end;
+    
 }
 
 .openChat {
     padding: 5px;
-    background-color: #27585F;
+    background-color: #15be9c;
     border-radius: 1rem;
 }
 

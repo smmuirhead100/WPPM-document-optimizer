@@ -2,8 +2,8 @@ import React from "react";
 import { onSnapshot } from "firebase/firestore";
 import { signUpClicked } from "./firebase";
 import { addDoc } from "firebase/firestore";
-import example from './assets/exampleDoc.png'
 import Chatbot from "./Chatbot";
+
 
 export default function HomeBody() {
     const[buttonCount, setButtonCount] = React.useState([])
@@ -39,13 +39,12 @@ export default function HomeBody() {
                 </div>
 
                 <div className="homeBody--right">
-                    <Chatbot />
                 </div>
             </div>
 
-            <img src={example} className="exampleImage"/>
-
             <div className="homeBody--lower">
+                <div>Try our Chatbot for free now!</div>
+                <Chatbot />
             </div>
             
 
